@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+\Illuminate\Support\Facades\Auth::routes(["register" => false, "verify"=>false]);
 
-\Illuminate\Support\Facades\Auth::routes();
+Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('inicio');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/portafolio', [App\Http\Controllers\PageController::class, 'project'])->name('portafolio');
+
+Route::get('/acerca-de', [App\Http\Controllers\PageController::class, 'about'])->name('about');
+
+Route::get('/blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
+
+Route::get('/login', [App\Http\Controllers\PageController::class, 'login'])->name('login');
+

@@ -1,0 +1,411 @@
+/**********************************
+ESTILO GLOBAL
+************************************/
+:root {
+    --icon-size-nav: 20px;
+    --font-grandstandar: "Grandstander", cursive;
+    --font-oswald: "Oswald", sans-serif;
+    --color-default: #fff;
+    --color-link: rgb(39, 63, 172);
+    --color-border: rgba(223, 223, 223, 0.849);
+    --color-cap-cover: rgba(0, 0, 0, 0.356);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    /* font-family: var(--font-oswald); */
+}
+html {
+    scroll-behavior: smooth;
+}
+#box-vacio {
+    width: 100%;
+}
+/**********************************
+ESTILOS DEL SCROLL
+************************************/
+.scroll-default {
+    overflow: auto;
+}
+.scroll-default::-webkit-scrollbar-track {
+    background-color: rgb(216, 213, 210);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.scroll-default::-webkit-scrollbar {
+    width: 5px;
+    background-color: var(--color-default);
+}
+.scroll-default::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.header,
+.box-nav-inferior {
+    z-index: 45;
+}
+.section,
+.footer {
+    z-index: 5;
+    position: relative;
+}
+/**********************************
+ESTILO DEL AVISO DE CONEXION
+************************************/
+#box-message {
+    margin: 50px 0;
+}
+#box-message img {
+    max-width: 650px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/**********************************
+ESTILO DEL AVISO DE CONEXION
+************************************/
+#box-warning-connection {
+    position: fixed;
+    transform: translateY(-100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 60;
+    background-color: rgb(184, 43, 25);
+    text-align: center;
+    transition: all 200ms linear;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+}
+#box-warning-connection > div {
+    position: relative;
+}
+#box-warning-connection p {
+    padding: 20px 8px;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+}
+#box-warning-connection i {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+}
+/**********************************
+ESTILO DEL HEADER
+************************************/
+.header {
+    font-family: var(--font-grandstandar);
+    background-color: var(--color-default);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.header a {
+    text-decoration: none;
+}
+.header > div img {
+    width: 12em;
+}
+
+#ico-bar,
+#ico-cancel {
+    font-size: var(--icon-size-nav);
+    box-shadow: 0px 0px 8px #ccc;
+    padding: 5px 8px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+}
+#box-tools-menu > a {
+    padding: 5px 8px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 5px;
+    transition: all 200ms linear;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+}
+.btn-login {
+    color: var(--color-link);
+    border: 1px solid var(--color-link);
+}
+.route-active-login {
+    color: var(--color-default);
+    background-color: var(--color-link);
+}
+.route-active-login:hover {
+    color: var(--color-default);
+}
+#box-tools-menu > a > span {
+    display: none;
+}
+.box-nav-superior {
+    box-shadow: 0px 2px 8px rgba(204, 204, 204, 0.637);
+}
+#nav {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    max-width: 350px;
+    width: 70%;
+    height: 100vh;
+    background-color: rgb(28, 30, 32);
+    transform: translateX(100%);
+    z-index: 55;
+    opacity: 0;
+    transition: all 300ms linear;
+    transition: all 300ms linear;
+    transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.box-nav-header {
+    background-color: var(--color-default);
+    padding: 4.5px 0px;
+    box-sizing: border-box;
+}
+.box-nav-header > a img {
+    width: 10em;
+}
+/*** ESTILO GENERAL DE LOS ENLACES ***/
+.nav-box-link > a {
+    line-height: 3.5em;
+    box-sizing: border-box;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9em;
+    position: relative;
+    color: var(--color-default);
+}
+.nav-box-link > a i {
+    margin: 0 15px;
+    transition: all 200ms linear;
+}
+
+/***STYLE FOR DEFAULT***/
+.link-default:hover > i {
+    margin-left: 30px;
+}
+.link-default:hover {
+    background-color: rgb(44, 44, 44);
+}
+.link-default:hover:after,
+.link-active-route:after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 100%;
+    background-color: var(--color-default);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/** ESTILO LINK ACTIVE **/
+.link-active-route {
+    background-color: rgb(19, 19, 19);
+}
+
+/**CONTENT SOCIAL NETWORK**/
+.nav-box-social {
+    margin: 25px auto;
+    color: var(--color-default);
+}
+.nav-box-social a {
+    color: var(--color-default);
+    margin: 10px;
+}
+
+/**ESTILOS DEL CONTENEDOR DE ENLACE INFERIOR**/
+.box-nav-inferior {
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-default);
+    display: none;
+}
+
+/****ESTILO DEL BUSCADOR****/
+.box-find-posts input,
+.box-find-posts button {
+    padding: 5px 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+}
+.box-find-posts input {
+    width: 250px;
+    border: 1px solid #ccc;
+    color: rgb(92, 92, 92);
+}
+.box-find-posts button {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(12, 94, 161);
+    color: var(--color-default);
+}
+/****ESTILO DE LOS LINK****/
+.box-bar-inferior {
+    line-height: 3em;
+}
+
+.box-bar-inferior > a {
+    display: block;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.box-bar-inferior > a > i {
+    display: none;
+}
+
+.link2-default {
+    color: rgb(12, 94, 161);
+    background-color: rgba(223, 223, 223, 0.288);
+}
+.link2-default:hover {
+    box-shadow: 0px 3px 0px rgb(12, 94, 161);
+    background-color: rgb(223, 223, 223);
+}
+.link2-active-route {
+    color: var(--color-default);
+    background-color: rgba(12, 94, 161, 0.925);
+}
+.link2-active-route:hover {
+    color: var(--color-default);
+}
+/**********************************
+ESTILOS DEL COVER
+************************************/
+.box-cover {
+    display: block;
+    overflow: hidden;
+    height: 500px;
+    position: relative;
+    color: var(--color-default);
+}
+.box-cover > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.box-cover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-cap-cover);
+    z-index: -1;
+}
+
+.box-cover img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.box-network {
+    display: none;
+}
+@media screen and (min-width: 800px) {
+    .box-cover > div {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .box-objective {
+        width: 60%;
+    }
+    .box-network {
+        width: 40%;
+        display: block;
+    }
+    .box-network a {
+        text-decoration: none;
+        margin: 15px;
+        font-size: 25px;
+    }
+}
+/**********************************
+ESTILO FOOTER
+************************************/
+.footer {
+    font-size: 12px;
+    color: rgb(82, 82, 82);
+    border-top: 1px solid var(--color-border);
+}
+.footer > div {
+    margin: 50px auto;
+}
+.footer p a {
+    text-decoration: none;
+    color: rgb(82, 82, 82);
+}
+#box-doc {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    display: none;
+}
+/*************************************
+  ESTILOS DE RESOLUCION
+*************************************/
+@media screen and (min-width: 800px) {
+    #nav {
+        display: none;
+    }
+    #ico-bar {
+        display: none;
+    }
+    .header {
+        position: relative;
+    }
+    .box-nav-inferior {
+        display: block;
+    }
+    .box-nav-superior {
+        border-bottom: 1px solid var(--color-border);
+    }
+    #box-tools-menu > a > span {
+        display: inline-block;
+    }
+    .btn-login:hover {
+        color: var(--color-default);
+        background-color: var(--color-link);
+        border: 1px solid transparent;
+        transition: all 200ms linear;
+        -webkit-transition: all 200ms linear;
+        -moz-transition: all 200ms linear;
+        -o-transition: all 200ms linear;
+    }
+    .footer {
+        font-size: 14px;
+        color: rgb(82, 82, 82);
+    }
+}

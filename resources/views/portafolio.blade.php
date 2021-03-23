@@ -1,4 +1,4 @@
-@extends('layouts.pages', ["title" => "Inicio de sesion"])
+@extends('layouts.pages', ["title" => "Portafolio"])
 
 @section('css')
 
@@ -6,8 +6,9 @@
 
 @section('section')
 @include('components.message_dev')
+
 @endsection
 
 @section('js')
-  
+
 @endsection

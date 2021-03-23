@@ -1,0 +1,28 @@
+.box-tecnology {
+    background-color: rgb(53, 53, 53);
+    color: var(--color-default);
+    text-align: center;
+}
+
+.box-tecnology h5,
+.box-tecnology > div {
+    padding: 3em 0.5em;
+    box-sizing: border-box;
+}
+.box-tecnology i {
+    font-size: 35px;
+    cursor: default;
+    display: block;
+    color: #ccc;
+}
+
+.box-tecnology i:hover {
+    color: var(--color-default);
+    font-weight: bold;
+}
+
+@media screen and (min-width: 800px) {
+    .box-tecnology i {
+        font-size: 50px;
+    }
+}
