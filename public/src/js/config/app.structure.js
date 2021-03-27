@@ -1,7 +1,6 @@
 const widthElementDefault = 800;
 let widthNavBarDefault = 0;
-const $box_warning_connection = document.querySelector("#box-warning-connection");
-const $btn_warning_hide = document.querySelector("#btn-warning-network");
+const nav_bar = document.querySelector("#nav");
 
 function setMaxWidth(params) {
   widthNavBarDefault = params;
@@ -12,7 +11,6 @@ function getMaxWidth() {
 
 function applyStyleNavBar(...objectValue){
   const {0:transValue, 1:opaValue, 2:widthEl, 3:zValue,4:dValue} = objectValue;
-  const nav_bar = document.querySelector("#nav");
   const box_cap = document.querySelector("#box-doc");
 
   nav_bar.style.right = `${0}%`;
@@ -56,7 +54,7 @@ function actionDefaultNavBar(){
   const elements = ["ico-bar","ico-cancel","box-doc"];
 
   for (let i = 0; i < elements.length; i++) {
-    applyEventNavBarMenu(elements[i]); 
+    applyEventNavBarMenu(elements[i]);
   }
 }
 
@@ -65,9 +63,9 @@ function moveElementLinkOption1(box1ClassName, box2ClassName){
   const box2_content_link = document.querySelector(box2ClassName);
 
   const num = box1_content_link.children.length;
-  
+
   for (let i = 0; i < num; i++) {
-    box2_content_link.appendChild(box1_content_link.firstElementChild);   
+    box2_content_link.appendChild(box1_content_link.firstElementChild);
     box2_content_link.children[i].classList.replace("link-default","link2-default");
     box2_content_link.children[i].classList.replace("link-active-route","link2-active-route");
   }
@@ -78,9 +76,9 @@ function moveElementLinkOption2(box1ClassName, box2ClassName){
   const box2_content_link = document.querySelector(box2ClassName);
 
   const num = box1_content_link.children.length;
-  
+
   for (let i = 0; i < num; i++) {
-    box2_content_link.appendChild(box1_content_link.firstElementChild);   
+    box2_content_link.appendChild(box1_content_link.firstElementChild);
     box2_content_link.children[i].classList.replace("link2-default","link-default");
     box2_content_link.children[i].classList.replace("link2-active-route","link-active-route");
   }
@@ -96,13 +94,16 @@ function toogleAddElementEmpty(value = null){
   FUNCIONALIDAD PRINCIPAL- EJECUTA LAS FUNCIONALIDADES DEPENDIENDO DE LA RESOLUCION DE LA VENTANA
 *************************/
 function styleBarNavMenuForDefault(){
+  findPost("fr-find-navbar-inf");
+  findPost("fr-find-navbar");
+  findPost("fr-find-cover");
   if (window.innerWidth > widthElementDefault) {
     setMaxWidth(50);
     moveElementLinkOption1(".nav-box-link","#box-bar-link-inf");
     toogleAddElementEmpty(0);
     applyStyleNavBar(100, 0, getMaxWidth(), 1, false);
-    
-  } else {     
+    navbarForDefault();
+  } else {
     moveElementLinkOption2("#box-bar-link-inf",".nav-box-link");
     toogleAddElementEmpty();
 
@@ -112,6 +113,29 @@ function styleBarNavMenuForDefault(){
       setMaxWidth(70);
     }
   }
+}
+/**********************
+  FUNCIONALIDAD - BUSCADORES
+*************************/
+function findPost(idname){
+  const form = document.querySelector(`#${idname}`);
+
+  if (form) {
+    form.addEventListener("submit", e=>{
+      e.preventDefault();
+      const input = form.children[0].value = "";
+    });
+  }
+}
+/**********************
+  FUNCIONALIDAD - VALIDAR EL SCROLL MENU
+*************************/
+function navbarForDefault(){
+  nav_bar.scroll({
+      top: 0,
+      behavior: 'smooth'
+  });
+  document.querySelector("#txt-find-post").value = "";
 }
 /**********************
   FUNCIONALIDAD - VISTA BARRA INFERIOR MENU ORDENADOR
@@ -132,46 +156,10 @@ function applyEventScrollNavBarMenu(){
     navBar_inferior.style.boxShadow = "0px 0px 0px transparent";
   }
 }
-/**********************
-  FUNCIONALIDAD - VERIFICACION DE CONEXION A INTERNET
-*************************/
-var clearFunction;
-function verifyConnectionNetwork(){
-  if(navigator.onLine) {
-    clearFunction = setTimeout(() => {
-      verifyConnectionNetwork();
-    }, 3000);
-    console.log("Conexion existente");
-    applyEffectBoxWarning();
-  } else {
-    clearTimeout(clearFunction);
-    verifyErrorConnectionNetwork();
-  }
-}
-
-function verifyErrorConnectionNetwork(){
-  if(!navigator.onLine){
-    clearFunction = setTimeout(()=>{
-      verifyErrorConnectionNetwork();
-    },3000);
-    console.log("Sin conexion");
-    applyEffectBoxWarning(0);
-  }else{
-    clearTimeout(clearFunction);
-    verifyConnectionNetwork();
-  }
-}
-function applyEffectBoxWarning(value = null){
-  const height = $box_warning_connection.clientHeight;
-  $box_warning_connection.style.transform = value == null ? `translateY(${-height}px)` : `translateY(0px)`;
-}
-
 
 window.addEventListener("resize", styleBarNavMenuForDefault);
 document.addEventListener("DOMContentLoaded", styleBarNavMenuForDefault);
 document.addEventListener("DOMContentLoaded", actionDefaultNavBar);
 window.addEventListener("scroll", applyEventScrollNavBarMenu);
-document.addEventListener('DOMContentLoaded', verifyConnectionNetwork);
-$btn_warning_hide.addEventListener("click",()=>applyEffectBoxWarning());
 
 

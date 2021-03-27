@@ -72,38 +72,7 @@ ESTILO DEL AVISO DE CONEXION
     height: 100%;
     display: block;
 }
-/**********************************
-ESTILO DEL AVISO DE CONEXION
-************************************/
-#box-warning-connection {
-    position: fixed;
-    transform: translateY(-100%);
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 60;
-    background-color: rgb(184, 43, 25);
-    text-align: center;
-    transition: all 200ms linear;
-    -webkit-transition: all 200ms linear;
-    -moz-transition: all 200ms linear;
-    -o-transition: all 200ms linear;
-}
-#box-warning-connection > div {
-    position: relative;
-}
-#box-warning-connection p {
-    padding: 20px 8px;
-    margin-bottom: 0px;
-    box-sizing: border-box;
-    font-size: 0.8em;
-}
-#box-warning-connection i {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    font-size: 24px;
-}
+
 /**********************************
 ESTILO DEL HEADER
 ************************************/
@@ -158,6 +127,8 @@ ESTILO DEL HEADER
 }
 .box-nav-superior {
     box-shadow: 0px 2px 8px rgba(204, 204, 204, 0.637);
+    padding: 5px 0;
+    box-sizing: border-box;
 }
 #nav {
     position: fixed;
@@ -184,7 +155,43 @@ ESTILO DEL HEADER
 .box-nav-header > a img {
     width: 10em;
 }
+/***** ESTILOS DEL BUSCADOR *****/
+.box-find-nav {
+    margin: 15px 0;
+    position: relative;
+    line-height: 2.5em;
+}
+.box-find-nav input {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid transparent;
+    width: 95%;
+    max-width: 350px;
+    margin: 0 auto;
+    outline: none;
+    border-radius: 25px;
+    padding: 0 40px 0 8px;
+    box-sizing: border-box;
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+}
+.box-find-nav button {
+    outline: none;
+    border: 0;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    color: var(--color-default);
+    padding: 5px 5px;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
 /*** ESTILO GENERAL DE LOS ENLACES ***/
+.nav-box-link {
+    margin-bottom: 50px;
+}
 .nav-box-link > a {
     line-height: 3.5em;
     box-sizing: border-box;
@@ -214,7 +221,7 @@ ESTILO DEL HEADER
     height: 100%;
     background-color: var(--color-default);
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
 }
 /** ESTILO LINK ACTIVE **/
@@ -224,10 +231,14 @@ ESTILO DEL HEADER
 
 /**CONTENT SOCIAL NETWORK**/
 .nav-box-social {
-    margin: 25px auto;
+    margin: 25px auto 50px auto;
     color: var(--color-default);
 }
+.nav-box-social h6 {
+    font-size: 14px;
+}
 .nav-box-social a {
+    font-size: 24px;
     color: var(--color-default);
     margin: 10px;
 }
@@ -260,18 +271,18 @@ ESTILO DEL HEADER
 }
 /****ESTILO DE LOS LINK****/
 .box-bar-inferior {
-    line-height: 3em;
+    line-height: 3.5em;
 }
 
 .box-bar-inferior > a {
     display: block;
-    padding: 0px 10px;
+    padding: 0px 15px;
     box-sizing: border-box;
     font-size: 14px;
 }
-.box-bar-inferior > a > i {
+/* .box-bar-inferior > a > i {
     display: none;
-}
+} */
 
 .link2-default {
     color: rgb(12, 94, 161);
@@ -376,6 +387,15 @@ ESTILO FOOTER
 /*************************************
   ESTILOS DE RESOLUCION
 *************************************/
+
+@media screen and (min-width: 600px) {
+    .box-nav-superior {
+        padding: 10px 0;
+    }
+    .box-nav-header {
+        padding: 9px 0px;
+    }
+}
 @media screen and (min-width: 800px) {
     #nav {
         display: none;

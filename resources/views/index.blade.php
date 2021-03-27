@@ -6,21 +6,11 @@
 
 @section('section')
 @include('components.covers')
-@include('components.message_dev')
-<div class="box-tecnology">
-  <div class="container-xl">
-    <h5>Tecnolog&iacute;as utilizadas en el desarrollo del sitio</h5>
-    <div class="flex-wrap d-flex justify-content-around align-items-center">
-      <i class="fab fa-html5" title="HTML 5"></i>
-      <i class="fab fa-css3-alt" title="CSS 3"></i>
-      <i class="fab fa-js-square" title="Javascript"></i>
-      <i class="fab fa-laravel" title="Laravel"></i>
-      <i class="fab fa-bootstrap" title="Bootstrap"></i>
-    </div>
-  </div>
-</div>
+@include('components.boxTemary')
+@include('components.boxTecnology')
+
 @endsection
 
 @section('js')
-  
+  <script src="{{asset("src/js/inicio.js")}}"></script>
 @endsection

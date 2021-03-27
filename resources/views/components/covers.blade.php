@@ -4,7 +4,7 @@
   <div class="container-xl">
     <div class="box-objective">
         <h1 class="mb-4">Aprende trucos y t&eacute;cnicas sobre las tecnologias del momento</h1>
-        <p>En <strong>StartWebDev</strong> encontraras guias, articulos sobre temas de Redes, Desarrollo web, Soporte t&eacute;cnico, etc. Que te seran de gran ayuda para poner en practica o como tema de consulta.</p>
+        <p>En <strong>StartWebDev</strong> encontraras guias, articulos sobre temas de Redes, Desarrollo web, Soporte t&eacute;cnico, etc. Que te seran de gran ayuda para poner en practica.</p>
     </div>
     <div class="box-network">
       <h6 class="text-center text-white">Redes sociales</h6>
@@ -19,12 +19,12 @@
   <img src="{{asset('src/img/covers/blog.jpg')}}" alt="{{ config('app.name', 'StartWebDev') }}">
   <div class="container-xl">
     <div class="box-objective">
-        <h1 class="mb-4">Art&iacute;culos, Tutoriales y Noticias sobre tecnologia</h1>
-        <p>Aqui encontraras lo que necesites, Redes, Desarrollo web, Soporte t&eacute;cnico, etc. Asi que quedate y consulta lo que necesites. ¿Que desea saber?</p>
-        <div class="box-find-posts" style="margin-top: 40px;">
+      <h1 class="mb-4">Art&iacute;culos, Tutoriales y Noticias sobre tecnologia</h1>
+      <p>Aqui encontraras lo que necesites, Redes, Desarrollo web, Soporte t&eacute;cnico, etc. Asi que quedate y consulta lo que necesites. ¿Que desea saber?</p>
+      <form action="#" class="box-find-posts" style="margin-top: 40px;" id="fr-find-cover">
         <input type="text" name="post" autocomplete="off" placeholder="¿Que post deseas encontrar?">
         <button>Buscar</button>
-      </div>
+      </form>
     </div>
   </div>
   @endif
