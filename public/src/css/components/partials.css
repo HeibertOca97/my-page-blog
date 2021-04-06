@@ -1,0 +1,74 @@
+/********************************
+ESTILOS DEL FOOTER INFO
+**********************************/
+@media screen and (min-width: 800px) {
+    .box-footer-info {
+        padding: 25px 0;
+        box-sizing: border-box;
+    }
+}
+
+.card-info-x1 {
+    width: 100%;
+    box-sizing: border-box;
+}
+.card-info-x1:nth-of-type(1) {
+    max-width: 350px;
+}
+.card-info-x1 {
+    max-width: 200px;
+}
+
+.card-info-x1 h5 {
+    font-size: 14px;
+}
+.card-info-x1 p,
+.card-info-x1 a {
+    font-size: 12px;
+    display: block;
+    color: rgb(211, 211, 211);
+}
+.card-info-x1 a:hover {
+    color: #fff;
+}
+
+/**************************
+ESTILOS DE LA CAJA DE TECNOLOGIAS UTILIZADAS
+****************************/
+.box-tecnology {
+    background-color: rgb(53, 53, 53);
+    color: var(--color-default);
+    text-align: center;
+}
+
+.box-tecnology h5,
+.box-tecnology > div {
+    padding: 3em 0.5em;
+    box-sizing: border-box;
+}
+.box-tecnology i {
+    font-size: 35px;
+    cursor: default;
+    display: block;
+    color: #ccc;
+}
+.card-items > p {
+    opacity: 0;
+    transition: all 200ms linear;
+}
+.card-items > i:hover {
+    color: var(--color-default);
+    font-weight: bold;
+}
+.card-items > i:hover ~ p {
+    opacity: 1;
+}
+
+/***************************
+ESTILOS GENERALES
+***************************/
+@media screen and (min-width: 800px) {
+    .box-tecnology i {
+        font-size: 50px;
+    }
+}

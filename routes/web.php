@@ -23,5 +23,7 @@ Route::get('/acerca-de', [App\Http\Controllers\PageController::class, 'about'])-
 
 Route::get('/blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
 
+Route::get('/politica-de-privacidad', [App\Http\Controllers\PageController::class, 'privacy'])->name('privacy');
+
 Route::get('/login', [App\Http\Controllers\PageController::class, 'login'])->name('login');
 

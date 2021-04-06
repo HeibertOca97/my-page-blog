@@ -1,0 +1,67 @@
+.aside-x1 {
+    width: 28%;
+    margin: 0 2%;
+    display: none;
+    border-radius: 3px;
+}
+.acerca-de {
+    border-radius: 3px;
+}
+
+@media screen and (min-width: 800px) {
+    .aside-x1 {
+        display: block;
+    }
+    .acerca-de {
+        width: 68%;
+    }
+}
+/***********SECCION AUTOR************/
+.card-author picture {
+    overflow: hidden;
+    border-radius: 125px;
+    max-width: 250px;
+    transition: all 250ms ease;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+}
+
+.card-author:hover picture {
+    border-radius: 0px;
+}
+
+.card-author:hover img {
+    box-shadow: -5px 15px 8px rgba(110, 110, 110, 0.192);
+}
+.card-author img {
+    transform: scale(0.95);
+    max-width: 250px;
+    display: block;
+    width: 100%;
+}
+.card-author p {
+    max-width: 350px;
+    width: 100%;
+}
+
+.card-sitie > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.card-sitie picture img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.card-sitie picture {
+    width: 250px;
+    margin: 50px auto;
+}
+.sitie-description {
+    max-width: 600px;
+    margin: auto;
+}

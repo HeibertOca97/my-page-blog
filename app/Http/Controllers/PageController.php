@@ -40,6 +40,11 @@ class PageController extends Controller
     {
       return view('portafolio');
     }
+
+    public function privacy()
+    {
+      return view('privacy');
+    }
     
     public function login()
     {
