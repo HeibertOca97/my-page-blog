@@ -1,0 +1,75 @@
+:root {
+    --font-grandstander: "Grandstander", cursive;
+    --font-oswald: "Oswald", sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: var(--font-grandstander);
+}
+.box-login {
+    height: 100vh;
+    background: #000046;
+    background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
+    background: linear-gradient(to right, #1cb5e0, #000046);
+}
+.box-cover {
+    width: 100%;
+    max-width: 400px;
+    display: none;
+}
+.box-cover > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.box-form-login {
+    width: 97%;
+    max-width: 380px;
+    position: relative;
+    border-radius: 10px;
+}
+.box-form-login h1,
+.box-form-login label {
+    color: #000046;
+}
+.btn-form-login {
+    background: #000046;
+    background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
+    background: linear-gradient(to right, #1cb5e0, #000046);
+    border-radius: 1px 35px 1px 15px;
+    border: none;
+    line-height: 3.1em;
+    width: 255px;
+    box-sizing: border-box;
+    transition: all 200ms ease;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+}
+.btn-form-login:hover {
+    border-radius: 3px 3px 3px 3px;
+}
+.box-logo {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+}
+.box-logo > img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+@media screen and (min-width: 900px) {
+    .box-cover {
+        display: block;
+    }
+}
+
+.box-autor,
+.route-link {
+    font-size: 14px;
+}

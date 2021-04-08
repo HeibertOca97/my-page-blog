@@ -1,47 +1,46 @@
-@extends('layouts.app')
+@extends('layouts.app', ["title" => "Recuperación de contraseña"])
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+@section('css')
+<link rel="stylesheet" href="{{asset('src/css/page/login.css')}}">
+@endsection
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+@section('section')
+<section class="box-login d-flex justify-content-around flex-wrap align-items-center scroll-default">
+  <picture class="box-cover mt-4 mb-4">
+    <img src="{{asset("src/img/add_email.svg")}}" alt="{{config('app.name','')}}" title="{{config('app.name','')}}">
+  </picture>
+  <div class="box-form-login bg-white mt-4 mb-4 pt-4 pb-2">
+    <div class="box-logo d-flex justify-content-center">
+      <img src="{{asset("src/img/logo.png")}}" alt="{{asset('app.name','')}}" title="{{asset('app.name','')}}" class="card-shadow">
     </div>
-</div>
+    <h1 class="text-center mt-4">Recuperación de contraseña</h1>
+    <form action="{{ route('password.email') }}" method="post" class="container-xl" id="fr-resetpass">
+      <div class="form-group mt-4 mb-4">
+        <label for="email"><i class="fas fa-envelope"></i> Correo electronico</label>
+        <input type="email" class="form-control" id="email" name="email" autocomplete="off" placeholder="username@server.domain">
+        @error('email')
+          <small class="text-danger">{{$message}}</small>
+        @enderror
+      </div>
+      <div class="d-flex justify-content-center mt-4">
+        <button class="text-center text-white btn-form-login">ENVIAR ENLACE</button>
+      </div>
+      <div class="d-flex justify-content-center mt-4">
+        <a href="{{ route('login') }}" class="route-link">Volver a Iniciar sesion</a>
+      </div>
+      <div class="box-autor mt-4">
+        <small class="text-center text-secondary d-block"><a href="{{route('inicio')}}" class="text-dark">{{config("app.name","")}}</a> © 2021 - Desarrollador por: <a href="https://ec.linkedin.com/in/heibert-joseph-oca%C3%B1a-rodr%C3%ADguez-1a29871b7" target="_blank" class="text-dark">Heibert Ocaña</a></small>
+      </div>
+    </form>
+  </div>
+</section>
+@endsection
+@section('js')
+<script>
+  document.querySelector("#fr-resetpass").addEventListener("submit",  e => {
+    e.preventDefault();
+    e.target.reset();
+    alert("Aun esta en desarrollo");
+  });
+</script>
 @endsection

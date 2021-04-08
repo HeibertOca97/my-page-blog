@@ -6,7 +6,7 @@
         <i class="fas fa-laptop-code text-center d-block"></i>
       </div>
       <h3 class="text-center">Desarrollo web</h3>
-      <p class="text-secondary">Necesitas ayuda con el desarrollo de tu sitio web, ponte en <b><a href="{{route("about")}}">contacto</a></b> con nosotros para ver que podemos hacer por ti.</p>
+      <p class="text-secondary">Necesitas ayuda con el desarrollo de tu sitio web, ponte en <b><a href="{{route("about")}}#contacto">contacto</a></b> con nosotros para ver que podemos hacer por ti.</p>
     </div>
     <div class="box-contenido">
       <div class="box-icon-title d-flex justify-content-center align-items-center">

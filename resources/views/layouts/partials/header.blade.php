@@ -3,7 +3,7 @@
     <div class="container-xl flex-wrap d-flex justify-content-between align-items-center">
       <a href="{{route('inicio')}}" title="{{ config('app.name', 'HeibertWebDev') }}"><img src="{{asset("src/img/logo-header.png")}}" alt="Logotipo - {{ config('app.name', 'HeibertWebDev') }}"></a>
       <div class="flex-wrap d-flex justify-content-between align-items-center" id="box-tools-menu">
-        <a href="{{route("login")}}" class="{{request()->routeIs("login") ? "route-active-login" : "btn-login"}} d-block"><i class="far fa-user" title="Iniciar sesion"></i> <span>Iniciar sesi&oacute;n</span></a>
+        <a href="{{route("login")}}" target="_blank" class="{{request()->routeIs("login") ? "route-active-login" : "btn-login"}} d-block"><i class="far fa-user" title="Iniciar sesion"></i> <span>Iniciar sesi&oacute;n</span></a>
         <i class="fas fa-bars ml-4 mr-2" id="ico-bar" role="button" title="menu"></i>
       </div>
     </div>

@@ -11,10 +11,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{{ config('app.name', 'HeibertWebDev') }}</title>
+  <title>{{$title}} | {{ config('app.name', 'HeibertWebDev') }}</title>
+  <link rel="shortcut icon" href="{{asset("src/img/logo.png")}}" type="image/x-icon">
+  <link rel="stylesheet" href="{{asset("src/lib/bootstrap.min.css")}}">
+  <link rel="stylesheet" href="{{asset("src/fonts/icons/css/all.css")}}">
+  <link rel="stylesheet" href="{{asset("src/fonts/fonts.css")}}">
+  <link rel="stylesheet" href="{{asset('src/css/config/general.css')}}">
   @yield('css')
 </head>
-<body>
+<body class="scroll-default">
   @yield('section')
   @yield('js')
 </body>

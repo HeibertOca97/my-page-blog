@@ -1,7 +1,6 @@
 @extends('layouts.pages', ["title" => "Politicas de privacidad"])
 
 @section('css')
-<link rel="stylesheet" href="{{asset('src/css/config/general.css')}}">
 <link rel="stylesheet" href="{{asset('src/css/components/partials.css')}}">
 @endsection
 

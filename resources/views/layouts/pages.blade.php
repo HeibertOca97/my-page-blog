@@ -14,9 +14,17 @@
   <title>{{$title}} | {{ config('app.name', 'HeibertWebDev') }}</title>
   <link rel="shortcut icon" href="{{asset("src/img/logo.png")}}" type="image/x-icon">
   <link rel="stylesheet" href="{{asset("src/lib/bootstrap.min.css")}}">
+  <!--JQUERY-->
+  <script src="{{asset('src/lib/jquery-3.5.1.min.js')}}"></script>
+  <!--JQUERY POPPER 1.16.0-->
+  <script src="{{asset('src/lib/popper.min.js')}}"></script>
+  <script src="{{asset('src/lib/bootstrap.min.js')}}"></script>
+  <link rel="stylesheet" href="{{asset("src/lib/toastr.min.css")}}">
+
   <link rel="stylesheet" href="{{asset("src/fonts/icons/css/all.css")}}">
   <link rel="stylesheet" href="{{asset("src/fonts/fonts.css")}}">
   <link rel="stylesheet" href="{{asset('src/css/config/app.structure.css')}}">
+  <link rel="stylesheet" href="{{asset('src/css/config/general.css')}}">
   @yield('css')
 </head>
 <body class="scroll-default">
@@ -26,6 +34,9 @@
   </section>
   @include('layouts.partials.footer')
   <script src="{{asset("src/js/config/app.structure.js")}}"></script>
+  <script src="{{asset("src/js/validations.js")}}"></script>
+  <script src="{{asset("src/lib/toastr.min.js")}}"></script>
+  <script src="{{asset("src/js/app.js")}}"></script>
   @yield('js')
 </body>
 </html>

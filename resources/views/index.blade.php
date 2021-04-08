@@ -11,7 +11,3 @@
 @include('components.boxTecnology')
 @include('components.boxFooterInfo')
 @endsection
-
-@section('js')
-  <script src="{{asset("src/js/inicio.js")}}"></script>
-@endsection

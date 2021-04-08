@@ -21,6 +21,8 @@ Route::get('/portafolio', [App\Http\Controllers\PageController::class, 'project'
 
 Route::get('/acerca-de', [App\Http\Controllers\PageController::class, 'about'])->name('about');
 
+Route::post('/message-contact/author-web-sitie', [App\Http\Controllers\PageController::class, 'store'])->name('contactar');
+
 Route::get('/blog', [App\Http\Controllers\PageController::class, 'blog'])->name('blog');
 
 Route::get('/politica-de-privacidad', [App\Http\Controllers\PageController::class, 'privacy'])->name('privacy');

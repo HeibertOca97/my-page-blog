@@ -1,14 +1,11 @@
 @extends('layouts.pages', ["title" => "Portafolio"])
 
 @section('css')
-
+<link rel="stylesheet" href="{{asset('src/css/components/partials.css')}}">
 @endsection
 
 @section('section')
 @include('components.message_dev')
 
-@endsection
-
-@section('js')
-
+@include('components.boxFooterInfo')
 @endsection
